@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ZAR</key>
+	<string>South Africa</string>
+	<key>USD</key>
+	<string>Unated Stated of America</string>
+	<key>TRY</key>
+	<string>Turkey</string>
+	<key>THB</key>
+	<string>Thailand</string>
+	<key>SGD</key>
+	<string>Singapore</string>
+	<key>SEK</key>
+	<string>Sweden</string>
+	<key>RUB</key>
+	<string>Russia</string>
+	<key>RON</key>
+	<string>Romania</string>
+	<key>PLN</key>
+	<string>Poland</string>
+	<key>PHP</key>
+	<string>Philipins</string>
+	<key>NZD</key>
+	<string>New Zealand</string>
+	<key>NOK</key>
+	<string>Norway</string>
+	<key>MYR</key>
+	<string>Malaysia</string>
+	<key>MXN</key>
+	<string>Mexico</string>
+	<key>KRW</key>
+	<string>South Korea</string>
+	<key>JPY</key>
+	<string>Japan</string>
+	<key>INR</key>
+	<string>India</string>
+	<key>ILS</key>
+	<string>Israel</string>
+	<key>IDR</key>
+	<string>Indonesia</string>
+	<key>HUF</key>
+	<string>Hungary</string>
+	<key>HRK</key>
+	<string>Croatia</string>
+	<key>HKD</key>
+	<string>Hong Kong</string>
+	<key>GBP</key>
+	<string>United Kingdom</string>
+	<key>DKK</key>
+	<string>Denmark</string>
+	<key>CZK</key>
+	<string>Czechia</string>
+	<key>CNY</key>
+	<string>China</string>
+	<key>CHF</key>
+	<string>Switzerland</string>
+	<key>CAD</key>
+	<string>Canada</string>
+	<key>BRL</key>
+	<string>Brazil</string>
+	<key>BGN</key>
+	<string>Bulgaria</string>
+	<key>AUD</key>
+	<string>Australia</string>
+	<key>EUR</key>
+	<string>Euro Member Countries</string>
+</dict>
+</plist>

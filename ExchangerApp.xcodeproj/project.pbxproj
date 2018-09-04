@@ -7,19 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FBE40B721BECCFF60A44784 /* Pods_ExchangerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5E1546233581A529E4B6AE /* Pods_ExchangerApp.framework */; };
+		EF1BC2662131A74500185884 /* IntervalRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1BC2652131A74500185884 /* IntervalRunner.swift */; };
+		EF1C3206213CF53800E4D97E /* RatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1C3205213CF53800E4D97E /* RatesView.swift */; };
+		EF6C413A21280C900094675B /* MainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C413921280C900094675B /* MainStore.swift */; };
+		EF6C413C21280CA20094675B /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C413B21280CA20094675B /* MainReducer.swift */; };
+		EF6C413E21280CAC0094675B /* MainState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C413D21280CAC0094675B /* MainState.swift */; };
+		EF6C414121280D280094675B /* RatesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C414021280D280094675B /* RatesSection.swift */; };
+		EF6C414321280EDB0094675B /* RatesReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C414221280EDB0094675B /* RatesReducer.swift */; };
+		EF6C4147212811760094675B /* MainStoreLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C4146212811760094675B /* MainStoreLogger.swift */; };
+		EF6C4149212812FF0094675B /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C4148212812FF0094675B /* RatesViewController.swift */; };
+		EF6C414B21281B240094675B /* RatesActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C414A21281B240094675B /* RatesActions.swift */; };
+		EF6C414D212838890094675B /* RatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C414C212838890094675B /* RatesCell.swift */; };
+		EF6C415B2129B7810094675B /* RatesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C415A2129B7810094675B /* RatesState.swift */; };
+		EF6C415D2129C7B80094675B /* Result+Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C415C2129C7B80094675B /* Result+Get.swift */; };
+		EF6C4168212B06510094675B /* RatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C4167212B06510094675B /* RatesService.swift */; };
+		EF6C416A212B087E0094675B /* RatesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C4169212B087E0094675B /* RatesDTO.swift */; };
+		EF6C416C212B09080094675B /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C416B212B09080094675B /* Translator.swift */; };
+		EF6C416E212B09BB0094675B /* RatesDTOTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C416D212B09BB0094675B /* RatesDTOTranslator.swift */; };
+		EF8B0D1B212DADE600AEFC58 /* RateTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B0D1A212DADE600AEFC58 /* RateTranslator.swift */; };
+		EF8B0D1E212DB28500AEFC58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF8B0D1C212DB26800AEFC58 /* Assets.xcassets */; };
+		EF8B0D20212DCE9F00AEFC58 /* Countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF8B0D1F212DCE9F00AEFC58 /* Countries.plist */; };
+		EF8B0D22212DCF9E00AEFC58 /* Bundle+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B0D21212DCF9E00AEFC58 /* Bundle+Dictionary.swift */; };
 		EFF277F12102605900C6F9D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF277F02102605900C6F9D9 /* AppDelegate.swift */; };
-		EFF277F32102605900C6F9D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF277F22102605900C6F9D9 /* ViewController.swift */; };
-		EFF277F62102605900C6F9D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFF277F42102605900C6F9D9 /* Main.storyboard */; };
-		EFF277F82102605A00C6F9D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFF277F72102605A00C6F9D9 /* Assets.xcassets */; };
 		EFF277FB2102605A00C6F9D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFF277F92102605A00C6F9D9 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F276CF7FDA6D0930F2D8ABF /* Pods-ExchangerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangerApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangerApp/Pods-ExchangerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4B5E1546233581A529E4B6AE /* Pods_ExchangerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		505A1DEC03414F45E6085B4C /* Pods-ExchangerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangerApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangerApp/Pods-ExchangerApp.release.xcconfig"; sourceTree = "<group>"; };
+		EF1BC2652131A74500185884 /* IntervalRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalRunner.swift; sourceTree = "<group>"; };
+		EF1C3205213CF53800E4D97E /* RatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesView.swift; sourceTree = "<group>"; };
+		EF6C413921280C900094675B /* MainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStore.swift; sourceTree = "<group>"; };
+		EF6C413B21280CA20094675B /* MainReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReducer.swift; sourceTree = "<group>"; };
+		EF6C413D21280CAC0094675B /* MainState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainState.swift; sourceTree = "<group>"; };
+		EF6C414021280D280094675B /* RatesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesSection.swift; sourceTree = "<group>"; };
+		EF6C414221280EDB0094675B /* RatesReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesReducer.swift; sourceTree = "<group>"; };
+		EF6C4146212811760094675B /* MainStoreLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStoreLogger.swift; sourceTree = "<group>"; };
+		EF6C4148212812FF0094675B /* RatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
+		EF6C414A21281B240094675B /* RatesActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesActions.swift; sourceTree = "<group>"; };
+		EF6C414C212838890094675B /* RatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesCell.swift; sourceTree = "<group>"; };
+		EF6C415A2129B7810094675B /* RatesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesState.swift; sourceTree = "<group>"; };
+		EF6C415C2129C7B80094675B /* Result+Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Get.swift"; sourceTree = "<group>"; };
+		EF6C4167212B06510094675B /* RatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesService.swift; sourceTree = "<group>"; };
+		EF6C4169212B087E0094675B /* RatesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesDTO.swift; sourceTree = "<group>"; };
+		EF6C416B212B09080094675B /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
+		EF6C416D212B09BB0094675B /* RatesDTOTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesDTOTranslator.swift; sourceTree = "<group>"; };
+		EF8B0D1A212DADE600AEFC58 /* RateTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateTranslator.swift; sourceTree = "<group>"; };
+		EF8B0D1C212DB26800AEFC58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF8B0D1F212DCE9F00AEFC58 /* Countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Countries.plist; sourceTree = "<group>"; };
+		EF8B0D21212DCF9E00AEFC58 /* Bundle+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Dictionary.swift"; sourceTree = "<group>"; };
 		EFF277ED2102605900C6F9D9 /* ExchangerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF277F02102605900C6F9D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EFF277F22102605900C6F9D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EFF277F52102605900C6F9D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EFF277F72102605A00C6F9D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFF277FA2102605A00C6F9D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFF277FC2102605A00C6F9D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -29,17 +69,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FBE40B721BECCFF60A44784 /* Pods_ExchangerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65713B49B6215549694D062A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F276CF7FDA6D0930F2D8ABF /* Pods-ExchangerApp.debug.xcconfig */,
+				505A1DEC03414F45E6085B4C /* Pods-ExchangerApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D6CD4AA7936A7A34F7902A72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B5E1546233581A529E4B6AE /* Pods_ExchangerApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF6C413F21280D080094675B /* Rates */ = {
+			isa = PBXGroup;
+			children = (
+				EF6C414A21281B240094675B /* RatesActions.swift */,
+				EF6C414021280D280094675B /* RatesSection.swift */,
+				EF6C414221280EDB0094675B /* RatesReducer.swift */,
+				EF6C4148212812FF0094675B /* RatesViewController.swift */,
+				EF6C414C212838890094675B /* RatesCell.swift */,
+				EF6C415A2129B7810094675B /* RatesState.swift */,
+				EF6C4167212B06510094675B /* RatesService.swift */,
+				EF6C4169212B087E0094675B /* RatesDTO.swift */,
+				EF6C416D212B09BB0094675B /* RatesDTOTranslator.swift */,
+				EF8B0D1A212DADE600AEFC58 /* RateTranslator.swift */,
+				EF1C3205213CF53800E4D97E /* RatesView.swift */,
+			);
+			path = Rates;
+			sourceTree = "<group>";
+		};
 		EFF277E42102605900C6F9D9 = {
 			isa = PBXGroup;
 			children = (
 				EFF277EF2102605900C6F9D9 /* ExchangerApp */,
 				EFF277EE2102605900C6F9D9 /* Products */,
+				65713B49B6215549694D062A /* Pods */,
+				D6CD4AA7936A7A34F7902A72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +132,20 @@
 		EFF277EF2102605900C6F9D9 /* ExchangerApp */ = {
 			isa = PBXGroup;
 			children = (
+				EF1BC2652131A74500185884 /* IntervalRunner.swift */,
+				EF6C416B212B09080094675B /* Translator.swift */,
+				EF6C413F21280D080094675B /* Rates */,
 				EFF277F02102605900C6F9D9 /* AppDelegate.swift */,
-				EFF277F22102605900C6F9D9 /* ViewController.swift */,
-				EFF277F42102605900C6F9D9 /* Main.storyboard */,
-				EFF277F72102605A00C6F9D9 /* Assets.xcassets */,
+				EF8B0D1C212DB26800AEFC58 /* Assets.xcassets */,
+				EF8B0D1F212DCE9F00AEFC58 /* Countries.plist */,
 				EFF277F92102605A00C6F9D9 /* LaunchScreen.storyboard */,
 				EFF277FC2102605A00C6F9D9 /* Info.plist */,
+				EF6C413921280C900094675B /* MainStore.swift */,
+				EF6C413B21280CA20094675B /* MainReducer.swift */,
+				EF6C413D21280CAC0094675B /* MainState.swift */,
+				EF6C4146212811760094675B /* MainStoreLogger.swift */,
+				EF6C415C2129C7B80094675B /* Result+Get.swift */,
+				EF8B0D21212DCF9E00AEFC58 /* Bundle+Dictionary.swift */,
 			);
 			path = ExchangerApp;
 			sourceTree = "<group>";
@@ -71,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EFF277FF2102605A00C6F9D9 /* Build configuration list for PBXNativeTarget "ExchangerApp" */;
 			buildPhases = (
+				51D731D2CF5CF28D2B01DF4D /* [CP] Check Pods Manifest.lock */,
 				EFF277E92102605900C6F9D9 /* Sources */,
 				EFF277EA2102605900C6F9D9 /* Frameworks */,
 				EFF277EB2102605900C6F9D9 /* Resources */,
+				6DF54FD5B1E42775A93399A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,35 +210,100 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF8B0D1E212DB28500AEFC58 /* Assets.xcassets in Resources */,
+				EF8B0D20212DCE9F00AEFC58 /* Countries.plist in Resources */,
 				EFF277FB2102605A00C6F9D9 /* LaunchScreen.storyboard in Resources */,
-				EFF277F82102605A00C6F9D9 /* Assets.xcassets in Resources */,
-				EFF277F62102605900C6F9D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		51D731D2CF5CF28D2B01DF4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ExchangerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DF54FD5B1E42775A93399A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExchangerApp/Pods-ExchangerApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/ReRxSwift/ReRxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxKeyboard/RxKeyboard.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReRxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxKeyboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ExchangerApp/Pods-ExchangerApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EFF277E92102605900C6F9D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFF277F32102605900C6F9D9 /* ViewController.swift in Sources */,
+				EF6C413E21280CAC0094675B /* MainState.swift in Sources */,
+				EF1BC2662131A74500185884 /* IntervalRunner.swift in Sources */,
+				EF6C414B21281B240094675B /* RatesActions.swift in Sources */,
+				EF8B0D1B212DADE600AEFC58 /* RateTranslator.swift in Sources */,
+				EF1C3206213CF53800E4D97E /* RatesView.swift in Sources */,
+				EF6C414121280D280094675B /* RatesSection.swift in Sources */,
+				EF6C416E212B09BB0094675B /* RatesDTOTranslator.swift in Sources */,
+				EF6C4149212812FF0094675B /* RatesViewController.swift in Sources */,
+				EF8B0D22212DCF9E00AEFC58 /* Bundle+Dictionary.swift in Sources */,
+				EF6C413A21280C900094675B /* MainStore.swift in Sources */,
+				EF6C4147212811760094675B /* MainStoreLogger.swift in Sources */,
+				EF6C4168212B06510094675B /* RatesService.swift in Sources */,
+				EF6C416C212B09080094675B /* Translator.swift in Sources */,
+				EF6C415B2129B7810094675B /* RatesState.swift in Sources */,
+				EF6C413C21280CA20094675B /* MainReducer.swift in Sources */,
+				EF6C414D212838890094675B /* RatesCell.swift in Sources */,
+				EF6C414321280EDB0094675B /* RatesReducer.swift in Sources */,
+				EF6C416A212B087E0094675B /* RatesDTO.swift in Sources */,
 				EFF277F12102605900C6F9D9 /* AppDelegate.swift in Sources */,
+				EF6C415D2129C7B80094675B /* Result+Get.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EFF277F42102605900C6F9D9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EFF277F52102605900C6F9D9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EFF277F92102605A00C6F9D9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -278,6 +431,7 @@
 		};
 		EFF278002102605A00C6F9D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F276CF7FDA6D0930F2D8ABF /* Pods-ExchangerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -289,13 +443,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mynight.ExchangerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		EFF278012102605A00C6F9D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 505A1DEC03414F45E6085B4C /* Pods-ExchangerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -307,8 +462,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mynight.ExchangerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
