@@ -12,9 +12,6 @@ PODS:
     - Differentiator (~> 3.0)
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - RxKeyboard (0.8.3):
-    - RxCocoa (>= 4.1.0)
-    - RxSwift (>= 4.1.0)
   - RxSwift (4.2.0)
   - SnapKit (4.0.0)
 
@@ -23,7 +20,6 @@ DEPENDENCIES:
   - Result (~> 3.0)
   - ReSwift
   - RxDataSources (~> 3.0)
-  - RxKeyboard
   - RxSwift
   - SnapKit
 
@@ -35,7 +31,6 @@ SPEC REPOS:
     - ReSwift
     - RxCocoa
     - RxDataSources
-    - RxKeyboard
     - RxSwift
     - SnapKit
 
@@ -46,10 +41,9 @@ SPEC CHECKSUMS:
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
-  RxKeyboard: e5efbaa109c35be909dd888e53de0f0efdf5169e
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: c6ee5990003855e39d7846150ecf5dbb00095ee8
+PODFILE CHECKSUM: d8e9050baaf4fbaadd8e5c04c254393bfe1a03f1
 
 COCOAPODS: 1.6.0.beta.1

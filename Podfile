@@ -12,5 +12,4 @@ target 'ExchangerApp' do
     pod 'SnapKit'
     pod 'RxDataSources', '~> 3.0'
     pod 'Result', '~> 3.0'
-    pod 'RxKeyboard'
 end

@@ -3,7 +3,6 @@ import Result
 import ReSwift
 import RxCocoa
 import RxDataSources
-import RxKeyboard
 import RxSwift
 import UIKit
 
@@ -65,7 +64,6 @@ class RatesViewController: UIViewController {
     )
 
     private let disposeBag = DisposeBag()
-    private let keyboardObservable = RxKeyboard.instance
     private lazy var intervalRunner = IntervalRunner(disposeBag: disposeBag)
 
     private lazy var controlProperty: (Rate, Observable<String?>) -> Void = { [ratesView, disposeBag] rate, property in
