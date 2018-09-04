@@ -11,7 +11,7 @@ extension RatesView {
 
 class RatesView: UIView {
     private let appearance: Appearance
-    
+
     private(set) lazy var tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .plain)
         view.showsVerticalScrollIndicator = true

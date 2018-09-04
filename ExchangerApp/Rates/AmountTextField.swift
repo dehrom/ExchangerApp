@@ -10,7 +10,7 @@ extension AmountTextField {
 
 class AmountTextField: UITextField {
     private let appearance: Appearance
-    
+
     private lazy var lineView: UIView = {
         let lineView = UIView()
         lineView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
@@ -19,18 +19,18 @@ class AmountTextField: UITextField {
         lineView.backgroundColor = appearance.normalColor
         return lineView
     }()
-    
+
     init(appearance: Appearance = Appearance()) {
         self.appearance = appearance
         super.init(frame: .zero)
         addSubview(lineView)
         textColor = appearance.normalColor
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func toggleColors() {
         if isFirstResponder {
             lineView.backgroundColor = appearance.selectedColor
@@ -41,4 +41,3 @@ class AmountTextField: UITextField {
         }
     }
 }
-

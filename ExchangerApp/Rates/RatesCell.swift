@@ -59,7 +59,7 @@ class RatesCell: UITableViewCell {
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func prepareForReuse() {
         amountField.isUserInteractionEnabled = false
     }
