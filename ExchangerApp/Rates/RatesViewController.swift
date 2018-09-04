@@ -6,6 +6,12 @@ import RxDataSources
 import RxSwift
 import UIKit
 
+extension RatesViewController {
+    struct Configuration {
+        let cellHeight: CGFloat = 56
+    }
+}
+
 extension RatesViewController: Connectable {
     struct Props {
         var section: [RatesSection]
@@ -18,18 +24,19 @@ extension RatesViewController: Connectable {
     }
 }
 
+// Avoid some animation glitches
 extension RatesViewController: UITableViewDelegate {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return cellHeight
+        return configuration.cellHeight
     }
 
     func tableView(_: UITableView, estimatedHeightForRowAt _: IndexPath) -> CGFloat {
-        return cellHeight
+        return configuration.cellHeight
     }
 }
 
 class RatesViewController: UIViewController {
-    private let cellHeight: CGFloat = 56
+    private let configuration: Configuration
 
     lazy var mapStateToProps = { (state: MainState) -> RatesViewController.Props in
         var props = RatesViewController.Props(section: [.initial], error: nil)
@@ -40,7 +47,7 @@ class RatesViewController: UIViewController {
         return props
     }
 
-    lazy var mapDispatchToActions = { [intervalRunner] (dispatcher: @escaping DispatchFunction) in
+    lazy var mapDispatchToActions = { [intervalRunner, ratesView] (dispatcher: @escaping DispatchFunction) in
         RatesViewController.Actions(
             select: { rate in
                 intervalRunner.stop()
@@ -68,8 +75,8 @@ class RatesViewController: UIViewController {
 
     private lazy var controlProperty: (Rate, Observable<String?>) -> Void = { [ratesView, disposeBag] rate, property in
         property
-            .map { $0 ?? "" }
             .debounce(1.5, scheduler: MainScheduler.instance)
+            .map { $0 ?? "" }
             .distinctUntilChanged()
             .filter { !$0.isEmpty }
             .bind(
@@ -86,19 +93,6 @@ class RatesViewController: UIViewController {
             target.ratesView.showError(message: error.errorDescription)
             target.intervalRunner.stop()
         }
-    }
-
-    private func configure(_ cell: RatesCell, with rate: Rate) {
-        cell.configure(with: rate)
-        cell.amountField.rx
-            .controlEvent(.editingDidBegin)
-            .bind { [actions] in
-                actions.select(rate)
-            }.disposed(by: disposeBag)
-        cell.amountField.rx
-            .controlEvent(.editingChanged)
-            .flatMap { cell.amountField.rx.text }
-            .bind(to: { controlProperty(rate, $0) })
     }
 
     private lazy var dataSource = RxTableViewSectionedAnimatedDataSource<RatesSection>(
@@ -121,7 +115,16 @@ class RatesViewController: UIViewController {
         let view = RatesView()
         self.view = view
     }
-
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        self.configuration = .init()
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Rates"
@@ -136,7 +139,11 @@ class RatesViewController: UIViewController {
         ).bind { [ratesView] indexPath, rate in
             ratesView.scrollToTop()
             self.actions.select(rate)
-            (ratesView.tableView.cellForRow(at: indexPath) as? RatesCell).map { _ = $0.amountField.becomeFirstResponder() }
+            (ratesView.tableView.cellForRow(at: indexPath) as? RatesCell).map { cell in
+                cell.amountField.isUserInteractionEnabled = true
+                cell.amountField.becomeFirstResponder()
+                cell.amountField.toggleColors()
+            }
         }.disposed(by: disposeBag)
     }
 
@@ -153,5 +160,18 @@ class RatesViewController: UIViewController {
         super.viewDidDisappear(animated)
         intervalRunner.stop()
         connection.disconnect()
+    }
+    
+    private func configure(_ cell: RatesCell, with rate: Rate) {
+        cell.configure(with: rate)
+        
+        cell.amountField.rx.controlEvent(.editingDidEnd).bind {
+            cell.amountField.toggleColors()
+            }.disposed(by: disposeBag)
+        
+        cell.amountField.rx
+            .controlEvent(.editingChanged)
+            .flatMap { cell.amountField.rx.text }
+            .bind(to: { controlProperty(rate, $0) })
     }
 }

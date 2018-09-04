@@ -1,7 +1,17 @@
 import SnapKit
 import UIKit
 
+extension RatesView {
+    struct Appearance {
+        var errorLabelTextColor = UIColor.black.withAlphaComponent(0.8)
+        var errorLabelFont = UIFont.boldSystemFont(ofSize: 17)
+        var backgroundColor = UIColor.white
+    }
+}
+
 class RatesView: UIView {
+    private let appearance: Appearance
+    
     private(set) lazy var tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .plain)
         view.showsVerticalScrollIndicator = true
@@ -13,18 +23,19 @@ class RatesView: UIView {
 
     private lazy var errorLabel: UILabel = {
         let view = UILabel(frame: .zero)
-        view.textColor = UIColor.black.withAlphaComponent(0.8)
-        view.font = UIFont.boldSystemFont(ofSize: 17)
+        view.textColor = appearance.errorLabelTextColor
+        view.font = appearance.errorLabelFont
         view.textAlignment = .center
         view.isHidden = true
         return view
     }()
 
-    init() {
+    init(appearance: Appearance = .init()) {
+        self.appearance = appearance
         super.init(frame: .zero)
         addSubviews()
         makeConstraints()
-        backgroundColor = UIColor.white
+        backgroundColor = appearance.backgroundColor
     }
 
     required init?(coder _: NSCoder) {

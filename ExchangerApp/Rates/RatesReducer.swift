@@ -8,8 +8,6 @@ func ratesTableReducer(action: Action, state: RatesState?) -> RatesState {
     else { return .initial }
 
     switch action {
-    case is RatesActions.FetchAction:
-        print("loading")
     case let action as RatesActions.PresentableAction:
         state.data = action.viewState
         break

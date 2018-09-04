@@ -4,20 +4,17 @@ import UIKit
 extension RatesCell {
     struct Appearance {
         var imageEdgeLength: CGFloat = 40
+        var cellMinWidth: CGFloat = 40
         var generalOffset: CGFloat = 6
-        var selectedColor: UIColor = .black
-        var normalColor: UIColor = .lightGray
-        var amountFieldWidthMultiplier: CGFloat = 0.25
+        var selectedColor = UIColor.black
+        var normalColor = UIColor.lightGray.withAlphaComponent(0.6)
+        var countryTitleLabelFont = UIFont.boldSystemFont(ofSize: 16)
+        var descriptionLabelFont = UIFont.boldSystemFont(ofSize: 12)
     }
 }
 
 class RatesCell: UITableViewCell {
-
-    // MARK: - Properties
-
-    let appearance: Appearance = Appearance()
-
-    // MARK: - Views
+    private let appearance: Appearance = Appearance()
 
     private lazy var countryImageView: UIImageView = {
         let view = UIImageView()
@@ -30,23 +27,24 @@ class RatesCell: UITableViewCell {
     private lazy var countryTitleLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 1
-        view.font = UIFont.boldSystemFont(ofSize: 16)
-        view.textColor = UIColor.black
+        view.font = appearance.countryTitleLabelFont
+        view.textColor = appearance.selectedColor
         return view
     }()
 
     private lazy var descriptionLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 1
-        view.font = UIFont.boldSystemFont(ofSize: 12)
-        view.textColor = UIColor.lightGray.withAlphaComponent(0.6)
+        view.font = appearance.descriptionLabelFont
+        view.textColor = appearance.normalColor
         return view
     }()
 
-    private(set) lazy var amountField: UITextField = {
-        let view = UITextField()
+    private(set) lazy var amountField: AmountTextField = {
+        let view = AmountTextField()
         view.keyboardType = .decimalPad
         view.textAlignment = .right
+        view.isUserInteractionEnabled = false
         return view
     }()
 
@@ -61,6 +59,10 @@ class RatesCell: UITableViewCell {
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func prepareForReuse() {
+        amountField.isUserInteractionEnabled = false
+    }
 
     func configure(with model: Rate) {
         countryImageView.image = model.image
@@ -72,6 +74,7 @@ class RatesCell: UITableViewCell {
         } else {
             amountField.placeholder = "0.0"
         }
+        amountField.sizeToFit()
     }
 
     // MARK: - Private methods
@@ -101,8 +104,8 @@ class RatesCell: UITableViewCell {
 
         amountField.snp.makeConstraints { make in
             make.right.equalToSuperview().inset(appearance.generalOffset)
-            make.width.greaterThanOrEqualTo(snp.width).multipliedBy(appearance.amountFieldWidthMultiplier).priority(.medium)
-            make.left.greaterThanOrEqualTo(snp.centerX).priority(.high)
+            make.width.equalTo(appearance.cellMinWidth).priority(.medium)
+            make.left.greaterThanOrEqualTo(descriptionLabel.snp.right).offset(appearance.generalOffset).priority(.high)
             make.centerY.equalToSuperview()
         }
     }
