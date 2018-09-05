@@ -33,8 +33,7 @@ class IntervalRunner {
         Observable.combineLatest(isRunning, action, timeInterval).flatMapLatest {
             (arg: (Bool, RatesActions?, RxTimeInterval)) -> Observable<RatesActions> in
             guard arg.0, let action = arg.1 else { return .empty() }
-            return Observable<Int>.interval(arg.2, scheduler: MainScheduler.instance).flatMap { _ in Observable<RatesActions>.just(action) }
-        }.subscribeOn(MainScheduler.instance)
-            .bind(onNext: { mainStore.dispatch($0.action()) }).disposed(by: disposeBag)
+            return Observable<Int>.interval(arg.2, scheduler: ConcurrentMainScheduler.instance).flatMap { _ in Observable<RatesActions>.just(action) }
+        }.bind(onNext: { mainStore.dispatch($0.action()) }).disposed(by: disposeBag)
     }
 }

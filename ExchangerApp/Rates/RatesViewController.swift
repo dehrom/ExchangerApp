@@ -81,7 +81,6 @@ class RatesViewController: UIViewController {
             .filter { !$0.isEmpty }
             .bind(
                 onNext: {
-                    ratesView.scrollToTop()
                     self.actions.changeValue(rate, $0)
                 }
             )
@@ -136,9 +135,9 @@ class RatesViewController: UIViewController {
         Observable.zip(
             ratesView.tableView.rx.itemSelected,
             ratesView.tableView.rx.modelSelected(Rate.self)
-        ).bind { [ratesView] indexPath, rate in
+        ).bind { [ratesView, actions] indexPath, rate in
             ratesView.scrollToTop()
-            self.actions.select(rate)
+            actions.select(rate)
             (ratesView.tableView.cellForRow(at: indexPath) as? RatesCell).map { cell in
                 cell.amountField.isUserInteractionEnabled = true
                 cell.amountField.becomeFirstResponder()

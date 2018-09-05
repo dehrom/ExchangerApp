@@ -50,7 +50,7 @@ extension RatesActions {
             service.fetch(for: currency)
                 .distinctUntilChanged()
                 .flatMap(translator.translate(from:))
-                .subscribeOn(MainScheduler.instance)
+                .subscribeOn(ConcurrentMainScheduler.instance)
                 .subscribe(
                     onNext: { [value] in mainStore.dispatch(UpdateTableAction(rates: $0, value: value)) },
                     onError: { mainStore.dispatch(PresentableAction(viewState: .failure(.underlyingError($0)))) }
