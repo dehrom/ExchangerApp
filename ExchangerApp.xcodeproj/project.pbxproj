@@ -10,6 +10,7 @@
 		4FBE40B721BECCFF60A44784 /* Pods_ExchangerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5E1546233581A529E4B6AE /* Pods_ExchangerApp.framework */; };
 		EF1BC2662131A74500185884 /* IntervalRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1BC2652131A74500185884 /* IntervalRunner.swift */; };
 		EF1C3206213CF53800E4D97E /* RatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1C3205213CF53800E4D97E /* RatesView.swift */; };
+		EF48649F21416532002BEAA4 /* Store+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF48649E21416532002BEAA4 /* Store+Dispatch.swift */; };
 		EF6C413A21280C900094675B /* MainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C413921280C900094675B /* MainStore.swift */; };
 		EF6C413C21280CA20094675B /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C413B21280CA20094675B /* MainReducer.swift */; };
 		EF6C413E21280CAC0094675B /* MainState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C413D21280CAC0094675B /* MainState.swift */; };
@@ -40,6 +41,7 @@
 		505A1DEC03414F45E6085B4C /* Pods-ExchangerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangerApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangerApp/Pods-ExchangerApp.release.xcconfig"; sourceTree = "<group>"; };
 		EF1BC2652131A74500185884 /* IntervalRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalRunner.swift; sourceTree = "<group>"; };
 		EF1C3205213CF53800E4D97E /* RatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesView.swift; sourceTree = "<group>"; };
+		EF48649E21416532002BEAA4 /* Store+Dispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+Dispatch.swift"; sourceTree = "<group>"; };
 		EF6C413921280C900094675B /* MainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStore.swift; sourceTree = "<group>"; };
 		EF6C413B21280CA20094675B /* MainReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReducer.swift; sourceTree = "<group>"; };
 		EF6C413D21280CAC0094675B /* MainState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainState.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				EF6C4146212811760094675B /* MainStoreLogger.swift */,
 				EF6C415C2129C7B80094675B /* Result+Get.swift */,
 				EF8B0D21212DCF9E00AEFC58 /* Bundle+Dictionary.swift */,
+				EF48649E21416532002BEAA4 /* Store+Dispatch.swift */,
 			);
 			path = ExchangerApp;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				EF6C4168212B06510094675B /* RatesService.swift in Sources */,
 				EF6C416C212B09080094675B /* Translator.swift in Sources */,
 				EF6C415B2129B7810094675B /* RatesState.swift in Sources */,
+				EF48649F21416532002BEAA4 /* Store+Dispatch.swift in Sources */,
 				EF6C413C21280CA20094675B /* MainReducer.swift in Sources */,
 				EF6C414D212838890094675B /* RatesCell.swift in Sources */,
 				EF6C414321280EDB0094675B /* RatesReducer.swift in Sources */,

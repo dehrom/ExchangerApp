@@ -56,8 +56,8 @@ class RatesViewController: UIViewController {
                 intervalRunner.start()
             },
             changeValue: { rate, value in
+                mainStore.dispatch(action: RatesActions.fetch(currency: rate.title, count: value).action())
                 intervalRunner.stop()
-                dispatcher(RatesActions.select(rate).action())
                 self.intervalRunner.set(action: .fetch(currency: rate.title, count: value))
                 intervalRunner.start()
             }
@@ -75,7 +75,7 @@ class RatesViewController: UIViewController {
 
     private lazy var controlProperty: (Rate, Observable<String?>) -> Void = { [ratesView, disposeBag] rate, property in
         property
-            .debounce(1.5, scheduler: MainScheduler.instance)
+            .debounce(0.5, scheduler: ConcurrentMainScheduler.instance)
             .map { $0 ?? "" }
             .distinctUntilChanged()
             .filter { !$0.isEmpty }

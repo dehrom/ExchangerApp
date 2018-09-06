@@ -52,8 +52,8 @@ extension RatesActions {
                 .flatMap(translator.translate(from:))
                 .subscribeOn(ConcurrentMainScheduler.instance)
                 .subscribe(
-                    onNext: { [value] in mainStore.dispatch(UpdateTableAction(rates: $0, value: value)) },
-                    onError: { mainStore.dispatch(PresentableAction(viewState: .failure(.underlyingError($0)))) }
+                    onNext: { [value] in mainStore.dispatch(action: UpdateTableAction(rates: $0, value: value)) },
+                    onError: { mainStore.dispatch(action: PresentableAction(viewState: .failure(.underlyingError($0)))) }
                 ).disposed(by: disposeBag)
         }
     }
@@ -74,7 +74,7 @@ extension RatesActions {
             else { return }
             rates.remove(at: index)
             rates.insert(selectedRate, at: 0)
-            mainStore.dispatch(PresentableAction(viewState: .success(rates)))
+            mainStore.dispatch(action: PresentableAction(viewState: .success(rates)))
         }
     }
 
@@ -98,7 +98,7 @@ extension RatesActions {
             guard
                 !existedRates.isEmpty
             else {
-                mainStore.dispatch(PresentableAction(viewState: .success(newRates)))
+                mainStore.dispatch(action: PresentableAction(viewState: .success(newRates)))
                 return
             }
             var tableRates = zip(newRates, existedRates).map { (arg: (newRate: Rate, exRate: Rate)) -> Rate in
@@ -106,8 +106,8 @@ extension RatesActions {
                 rate.value = block(arg.newRate.rate * self.value)
                 return rate
             }
-            tableRates[0].value = block(value)
-            mainStore.dispatch(PresentableAction(viewState: .success(tableRates)))
+            tableRates[0] = existedRates[0] // avoid reloading first row
+            mainStore.dispatch(action: PresentableAction(viewState: .success(tableRates)))
         }
     }
 

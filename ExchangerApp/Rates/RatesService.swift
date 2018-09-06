@@ -18,6 +18,7 @@ class RatesService {
         urlWithParameters.queryItems = [URLQueryItem(name: "base", value: currency)]
         return session.rx
             .data(request: .init(url: urlWithParameters.url!))
+            .takeLast(1)
             .flatMap(translator.translate(from:))
     }
 }
