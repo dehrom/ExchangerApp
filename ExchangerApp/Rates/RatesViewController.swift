@@ -164,9 +164,11 @@ class RatesViewController: UIViewController {
     private func configure(_ cell: RatesCell, with rate: Rate) {
         cell.configure(with: rate)
 
-        cell.amountField.rx.controlEvent(.editingDidEnd).bind {
-            cell.amountField.toggleColors()
-        }.disposed(by: disposeBag)
+        cell.amountField.rx
+            .controlEvent(.editingDidEnd)
+            .bind {
+                cell.amountField.toggleColors()
+            }.disposed(by: disposeBag)
 
         cell.amountField.rx
             .controlEvent(.editingChanged)
