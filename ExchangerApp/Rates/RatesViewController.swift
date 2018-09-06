@@ -47,19 +47,15 @@ class RatesViewController: UIViewController {
         return props
     }
 
-    lazy var mapDispatchToActions = { [intervalRunner, ratesView] (dispatcher: @escaping DispatchFunction) in
+    lazy var mapDispatchToActions = { [intervalRunner, ratesView] (_: @escaping DispatchFunction) in
         RatesViewController.Actions(
             select: { rate in
-                intervalRunner.stop()
-                dispatcher(RatesActions.select(rate).action())
+                mainStore.dispatch(action: RatesActions.select(rate).action())
                 self.intervalRunner.set(action: .fetch(currency: rate.title, count: rate.value))
-                intervalRunner.start()
             },
             changeValue: { rate, value in
                 mainStore.dispatch(action: RatesActions.fetch(currency: rate.title, count: value).action())
-                intervalRunner.stop()
                 self.intervalRunner.set(action: .fetch(currency: rate.title, count: value))
-                intervalRunner.start()
             }
         )
     }

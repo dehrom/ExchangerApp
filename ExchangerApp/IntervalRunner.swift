@@ -34,6 +34,6 @@ class IntervalRunner {
             (arg: (Bool, RatesActions?, RxTimeInterval)) -> Observable<RatesActions> in
             guard arg.0, let action = arg.1 else { return .empty() }
             return Observable<Int>.interval(arg.2, scheduler: ConcurrentMainScheduler.instance).flatMap { _ in Observable<RatesActions>.just(action) }
-        }.bind(onNext: { mainStore.dispatch($0.action()) }).disposed(by: disposeBag)
+        }.bind(onNext: { mainStore.dispatch(action: $0.action()) }).disposed(by: disposeBag)
     }
 }
