@@ -75,11 +75,7 @@ class RatesViewController: UIViewController {
             .map { $0 ?? "" }
             .distinctUntilChanged()
             .filter { !$0.isEmpty }
-            .bind(
-                onNext: {
-                    self.actions.changeValue(rate, $0)
-                }
-            )
+            .bind(onNext: { self.actions.changeValue(rate, $0) })
             .disposed(by: disposeBag)
     }
 
@@ -91,7 +87,11 @@ class RatesViewController: UIViewController {
     }
 
     private lazy var dataSource = RxTableViewSectionedAnimatedDataSource<RatesSection>(
-        animationConfiguration: AnimationConfiguration(insertAnimation: .none, reloadAnimation: .none, deleteAnimation: .automatic),
+        animationConfiguration: AnimationConfiguration(
+            insertAnimation: .none,
+            reloadAnimation: .none,
+            deleteAnimation: .automatic
+        ),
         configureCell: { [disposeBag, actions] (_, view, indexPath, rate) -> UITableViewCell in
             let cellReuseIdentifier = String(describing: RatesCell.self)
             view.register(RatesCell.self, forCellReuseIdentifier: cellReuseIdentifier)
@@ -107,8 +107,7 @@ class RatesViewController: UIViewController {
     }
 
     override func loadView() {
-        let view = RatesView()
-        self.view = view
+        view = RatesView()
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -162,9 +161,8 @@ class RatesViewController: UIViewController {
 
         cell.amountField.rx
             .controlEvent(.editingDidEnd)
-            .bind {
-                cell.amountField.toggleColors()
-            }.disposed(by: disposeBag)
+            .bind { cell.amountField.toggleColors() }
+            .disposed(by: disposeBag)
 
         cell.amountField.rx
             .controlEvent(.editingChanged)

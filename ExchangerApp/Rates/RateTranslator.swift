@@ -9,17 +9,17 @@ class RateTranslator: TranslatorProtocol {
     }()
 
     func translate(from: RatesDTO) -> Single<[Rate]> {
-        let block: (String, Double, String?) -> Rate = { currency, rate, value in
+        let block: (String, Double) -> Rate = { currency, rate in
             .init(
                 image: self.image(for: currency),
                 title: currency,
                 subTitle: self.countries[currency] ?? "undefined",
                 rate: rate,
-                value: value
+                value: nil
             )
         }
-        var models = from.rates.map { block($0.key, $0.value, nil) }
-        models.insert(block(from.baseCurrencyName, 0, nil), at: 0)
+        var models = from.rates.map { block($0.key, $0.value) }
+        models.insert(block(from.baseCurrencyName, 0), at: 0)
 
         return Observable<[Rate]>.just(models).asSingle()
     }
